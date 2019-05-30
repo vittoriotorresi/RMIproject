@@ -14,9 +14,7 @@ public class Server extends UnicastRemoteObject implements ServerInterface{
         try {
             ServerInterface server=new Server();
             Naming.rebind("calculator", server);
-        } catch(MalformedURLException e) {
-                   e.printStackTrace();
-               } catch(IOException e) {
+        } catch(RemoteException | MalformedURLException e) {
             e.printStackTrace();
         }
 
